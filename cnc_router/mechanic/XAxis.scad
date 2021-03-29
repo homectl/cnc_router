@@ -9,7 +9,7 @@ module XAxisGuide(r_guide, r_screw, h, w) {
   w_range = w - w_block;
   echo(str("X Axis Travel: ", w_range));
 
-  translate([-(w - w_block)/2 + w_range * X_POS, 0, 0]) {
+  translate([-w_range/2 + w_range * X_POS, 0, 0]) {
     XAxisBearingBlock(r_guide, r_screw, h, w_block);
     translate([-w_block/2, -10000 + r_guide*2, -h/2 - r_guide*2]) {
       ZAxis(h, w_block);
